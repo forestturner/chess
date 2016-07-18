@@ -1,7 +1,10 @@
+require_relative 'board'
+
 class Chess
   def initialize
     @players = [:white, :black]
     @current_player = @players[0]
+    @board = Board.new
   end
 
   def play

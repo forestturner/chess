@@ -1,17 +1,10 @@
 require 'singleton'
+require_relative 'piece'
 
-class NullPiece
+class NullPiece < Piece
   include Singleton
 
   def moves
   end
 
-  def color
-  end
-
-  def to_s
-  end
-
-  def empty?
-  end
 end

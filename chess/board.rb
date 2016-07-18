@@ -1,8 +1,10 @@
+require_relative 'nullpiece'
+
 class Board
   attr_reader :rows
 
   def initialize
-    @rows = Array.new(8) { Array.new(8) }
+    @rows = Array.new(8) { Array.new(8) { NullPiece.instance }}
 
   end
   def make_starting_grid ()
