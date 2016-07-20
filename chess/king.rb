@@ -4,7 +4,7 @@ require_relative "steppingpiece"
 class King < SteppingPiece
   def initialize(board, pos, color)
     super
-    @symbol = :king
+    @symbol = "♚"
   end
 
   def move_dirs

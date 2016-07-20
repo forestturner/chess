@@ -1,12 +1,12 @@
-require_relative 'board'
 require_relative 'cursorable'
 require 'colorize'
 
 class Display
   include Cursorable
 
-  def initialize(board)
+  def initialize(board, color)
     @board = board
+    @color = color
     @cursor_pos = [0, 0]
     @selected = false
   end
@@ -16,6 +16,7 @@ class Display
       build_row(row, i)
     end
   end
+
 
   def build_row(row, i)
     row.map.with_index do |piece, j|
@@ -33,17 +34,13 @@ class Display
     else
       bg = :blue
     end
-    { background: bg, color: :white }
+    { background: bg, color: @board[[i, j]].color }
   end
 
   def render
     system("clear")
-    puts "Fill the grid!"
+    puts "This is #{@color} player's turn."
     puts "Arrow keys, WASD, or vim to move, space or enter to confirm."
     build_grid.each { |row| puts row.join }
   end
 end
-
-b = Board.new()
-d = Display.new(b)
-d.render

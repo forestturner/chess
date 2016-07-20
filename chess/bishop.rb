@@ -3,7 +3,7 @@ require_relative 'slidingpiece'
 class Bishop < SlidingPiece
   def initialize(board, pos, color)
     super
-    @symbol = :bishop
+    @symbol = "♝"
   end
 
   def move_dirs

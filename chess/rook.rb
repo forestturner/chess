@@ -3,7 +3,7 @@ require_relative 'slidingpiece'
 class Rook < SlidingPiece
   def initialize(board, pos, color)
     super
-    @symbol = :rook
+    @symbol = "♜"
   end
 
   def move_dirs

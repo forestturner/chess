@@ -1,11 +1,10 @@
 require_relative "steppingpiece"
-require_relative "board"
 
 
 class Knight < SteppingPiece
   def initialize(board, pos, color)
     super
-    @symbol = :knight
+    @symbol = "♞"
   end
 
   def move_dirs
@@ -13,6 +12,4 @@ class Knight < SteppingPiece
   end
 end
 
-b = Board.new()
-q = Knight.new(b,[0, 0],:white)
-p q.moves
+#
